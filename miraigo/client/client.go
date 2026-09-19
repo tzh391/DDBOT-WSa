@@ -285,7 +285,7 @@ type StrangerInfo struct {
 	LoginDays  int    `json:"login_days"`
 }
 
-// 卡片消息
+// 卡片的消息
 type CardMessage struct {
 	App    string `json:"app"`
 	Config struct {
