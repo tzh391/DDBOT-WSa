@@ -47,9 +47,7 @@ jobs:
         run: |
           go vet ./...
 
-      - name: Generate HTML coverage report
-        run: |
-          go tool cover -html=profile.cov -o coverage.html
+      
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
