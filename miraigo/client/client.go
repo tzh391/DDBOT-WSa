@@ -1924,6 +1924,10 @@ func (c *QQClient) DownloadFile(url, base64, name string, headers []string) (str
 }
 
 func (c *QQClient) SendApi(api string, params map[string]any, expTime ...float64) (any, error) {
+	// OneBot 无参数 API 也发送空对象，避免生成 "params": null
+	if params == nil {
+		params = map[string]any{}
+	}
 	// 设置超时时间
 	var timeout float64
 	if len(expTime) > 0 {
